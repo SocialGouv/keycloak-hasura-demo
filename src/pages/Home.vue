@@ -35,23 +35,35 @@ export default {
   },
   methods: {
     checkIfUserHasBookReaderRole() {
-      return this.userInfo['https://hasura.io/jwt/claims'] &&
-        this.userInfo['https://hasura.io/jwt/claims']['x-hasura-allowed-roles'] &&
-        this.userInfo['https://hasura.io/jwt/claims']['x-hasura-allowed-roles'].includes('book-reader')
+      return (
+        this.userInfo["https://hasura.io/jwt/claims"] &&
+        this.userInfo["https://hasura.io/jwt/claims"][
+          "x-hasura-allowed-roles"
+        ] &&
+        this.userInfo["https://hasura.io/jwt/claims"][
+          "x-hasura-allowed-roles"
+        ].includes("book-reader")
+      );
     },
     checkIfUserHasBookCreatorRole() {
-      return this.userInfo['https://hasura.io/jwt/claims'] &&
-        this.userInfo['https://hasura.io/jwt/claims']['x-hasura-allowed-roles'] &&
-        this.userInfo['https://hasura.io/jwt/claims']['x-hasura-allowed-roles'].includes('book-creator')
-    }
-  }
+      return (
+        this.userInfo["https://hasura.io/jwt/claims"] &&
+        this.userInfo["https://hasura.io/jwt/claims"][
+          "x-hasura-allowed-roles"
+        ] &&
+        this.userInfo["https://hasura.io/jwt/claims"][
+          "x-hasura-allowed-roles"
+        ].includes("book-creator")
+      );
+    },
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1 {
-  color:#2f56ff;
+  color: #2f56ff;
 }
 .button {
   margin-top: 20px;

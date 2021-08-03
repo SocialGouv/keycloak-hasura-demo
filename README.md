@@ -2,7 +2,6 @@
 
 
 ## Description de l’application
-
 L’application est composée d’un frontend en Vuejs et d’un backend en Hasura.
 Pour gérer l’authentification et les autorisations nous utiliserons Keycloak.
 
@@ -25,7 +24,6 @@ Pour des raisons de performances nous devons dupliquer les utilisateurs de Keycl
 
 
 ## Les critères d’acceptation du POC
-
 Si je ne suis pas authentifié sur le frontend, je dois être redirigé vers la page de connexion de Keycloak
 Si je suis authentifié sur le frontend mais que je n’ai pas les rôles dans keycloak pour lister les livres alors ça m’affiche un message pour me dire qu je n’ai pas les droits
 Si je suis authentifié sur le frontend mais que je n’ai pas les rôles dans keycloak pour créer un livre alors ça m’affiche un message pour me dire qu je n’ai pas les droits
@@ -34,7 +32,6 @@ Si je suis authentifié sur le frontend mais que je n’ai pas les rôles dans k
 ## Les tâches réalisées
 
 ### Frontend
-
 Créer une application vierge en vuejs qui :
 - Redirige vers Keycloak si l’utilisateur n’est pas connecté
 - Affiche les roles utilisateurs une fois connecté dans une partie dédié
@@ -42,12 +39,10 @@ Créer une application vierge en vuejs qui :
 - Permet de créer un livre en fonction de ses droits sur Keycloak
 
 ### Backend Hasura
-
 Créer la base de données
 Faire en sorte que le token de Keycloak avec les rôles fonctionne et retourne 401 si n’a pas le rôle et 200 si a le rôle (Transformation du jwt possible à faire directement dans la configuration de keycloak)
 
 ### Keycloak
-
 Créer un event listener qui va détecter les changements sur les utilisateurs (création, mise à jour, suppression) et mettre à jour la base Hasura automatiquement.
 https://stackoverflow.com/questions/57431092/keycloak-subscribe-events-like-create-user-to-trigger-a-webservice
 https://www.keycloak.org/docs/latest/server_development/index.html#_events
@@ -56,7 +51,6 @@ Créer un identity provider github dans le realm keycloak d'hasura
 Créer un thème custom Keycloak
 
 ## Important à lire
-
 Pour mieux comprendre les rôles :
 - https://stackoverflow.com/questions/60963627/can-someone-forge-a-request-to-hasura-graphql-engine-by-setting-x-hasura-role
 Retours suite au POC :
@@ -82,5 +76,4 @@ A avoir en tête lors de la création du plugin keycloak :
 - Les dépendances supplémentaires sont assez complexe à installer (avis d'une personne n'ayant pas fait de java depuis un moment)
 
 ## Pour aller plus loin
-
 - [Manipuler en local le POC](docs/dev.md)

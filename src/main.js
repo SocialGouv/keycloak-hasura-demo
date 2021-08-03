@@ -8,7 +8,6 @@ import VueApollo from "vue-apollo";
 import { HttpLink } from "apollo-link-http";
 import { InMemoryCache } from "apollo-cache-inmemory";
 
-
 Vue.config.productionTip = false;
 
 // Logger configuration
@@ -72,13 +71,13 @@ keycloak
       uri: "http://localhost:8080/v1/graphql",
       headers: {
         Authorization: `Bearer ${keycloak.token}`,
-        'x-hasura-role': 'anonymous'
+        "x-hasura-role": "anonymous",
       },
     });
     const apolloClient = new ApolloClient({
       link: httpLink,
       connectToDevTools: true,
-      cache: new InMemoryCache()
+      cache: new InMemoryCache(),
     });
     const apolloProvider = new VueApollo({
       defaultClient: apolloClient,

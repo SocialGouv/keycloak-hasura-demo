@@ -12,6 +12,7 @@ services:
       POSTGRES_DB: keycloak
       POSTGRES_USER: keycloak
       POSTGRES_PASSWORD: password
+    restart: always
 
   # Keycloak
   keycloak:
@@ -29,6 +30,7 @@ services:
       DB_ADDR: pg_keycloak
       DB_USER: keycloak
       DB_PASSWORD: password
+    restart: always
 
   # PostgreSQL Server for Hasura
   pg_hasura:
@@ -39,6 +41,7 @@ services:
       - pg_hasura_data:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: postgrespassword
+    restart: always
 
   # Hasura
   hasura:
@@ -57,6 +60,7 @@ services:
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
       HASURA_GRAPHQL_JWT_SECRET: '{"jwk_url": "http://keycloak:8080/auth/realms/hasura/protocol/openid-connect/certs"}'
       HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
+    restart: always
 
 volumes:
   pg_hasura_data:

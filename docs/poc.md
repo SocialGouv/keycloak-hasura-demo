@@ -51,7 +51,10 @@ Faire en sorte que le token de Keycloak avec les rôles fonctionne et retourne 4
 ### Keycloak
 
 Créer un event listener qui va détecter les changements sur les utilisateurs (création, mise à jour, suppression) et mettre à jour la base Hasura automatiquement.
-https://stackoverflow.com/questions/57431092/keycloak-subscribe-events-like-create-user-to-trigger-a-webservice
-https://www.keycloak.org/docs/latest/server_development/index.html#_events
-https://github.com/keycloak/keycloak-quickstarts/tree/latest/event-listener-sysout
+
 Créer un identity provider github dans le realm keycloak d'hasura
+
+Ressources à lire pour réaliser le POC :
+- https://stackoverflow.com/questions/57431092/keycloak-subscribe-events-like-create-user-to-trigger-a-webservice
+- https://www.keycloak.org/docs/latest/server_development/index.html#_events
+- https://github.com/keycloak/keycloak-quickstarts/tree/latest/event-listener-sysout

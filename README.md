@@ -1,7 +1,4 @@
-# POC keycloak hasura
-
-Sommaire
--------------
+# POC Keycloak Hasura
 
 - [Cadrage du POC](docs/poc.md)
 - [Retours suite au POC](docs/feedback.md)

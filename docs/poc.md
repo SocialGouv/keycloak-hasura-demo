@@ -35,7 +35,7 @@ Si je suis authentifié sur le frontend mais que je n’ai pas les rôles dans k
 Les tâches réalisées
 -------------
 
-### Frontend
+### Frontend
 
 Créer une application vierge en vuejs qui :
 - Redirige vers Keycloak si l’utilisateur n’est pas connecté
@@ -48,7 +48,7 @@ Créer une application vierge en vuejs qui :
 Créer la base de données
 Faire en sorte que le token de Keycloak avec les rôles fonctionne et retourne 401 si n’a pas le rôle et 200 si a le rôle (Transformation du jwt possible à faire directement dans la configuration de keycloak)
 
-### Keycloak
+### Keycloak
 
 Créer un event listener qui va détecter les changements sur les utilisateurs (création, mise à jour, suppression) et mettre à jour la base Hasura automatiquement.
 https://stackoverflow.com/questions/57431092/keycloak-subscribe-events-like-create-user-to-trigger-a-webservice

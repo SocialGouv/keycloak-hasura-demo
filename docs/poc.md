@@ -9,19 +9,19 @@ Pour gérer l’authentification et les autorisations nous utiliserons Keycloak.
 Keycloak générera un token JWT qui contiendra les rôles de l’utilisateur.
 De cette façon le backend Hasura devra vérifier dans le token si l’utilisateur a le droit de faire une requête, puis retournera les ressources si l’utilisateur est autorisé
 
-Dans le backend Hasura nous allons créer une table :
-Book : Une table qui contient une liste de livre (nom, createur, date de publication)
-User : 
+Dans le backend Hasura nous allons créer deux tables :
+- User : Une table qui sera synchronisé avec les users de keycloak
+- Book : Une table qui contient une liste de livres (nom, createur (fk -> user), date de publication)
 
 Dans keycloak nous allons créer deux rôles :
-Book creator : Permet de créer, modifier et supprimer un livre
-Book reader : Permet de lister les livres
+- Book creator : Permet de créer, modifier et supprimer un livre
+- Book reader : Permet de lister les livres
 
 De cette façon, sur le frontend, l’utilisateur devra pouvoir créer un livre uniquement s’il a le rôle livre creator et voir la liste des livres uniquement s’il a le rôle livre reader.
 
 Le backend doit retourner une 401 si l’utilisateur qui fait la requête n’a pas les droits de faire la requête.
 
-Pour des raisons de performances nous devons dupliquer les utilisateurs de Keycloak dans Hasura, il faudra donc faire en sorte que lorsqu’un utilisateur est créé sur l’interface de Keycloak que l'utilisateur soit créer aussi sur Hasura. Pour se faire il faudra vérifier s’il est possible de créer des webhooks sur Keycloak lorsqu’un utilisateur est créé. Sinon il faudra créer des classes Java et surcharger les classes de Keycloak.
+Pour des raisons de performances nous devons dupliquer les utilisateurs de Keycloak dans Hasura, il faudra donc faire en sorte que lorsqu’un utilisateur est créé sur l’interface de Keycloak que l'utilisateur soit créé aussi sur Hasura. Pour ce faire il faudra vérifier s’il est possible de créer des webhooks sur Keycloak lorsqu’un utilisateur est créé. Sinon il faudra créer des classes Java et surcharger les classes de Keycloak.
 
 
 Les critères d’acceptation du POC

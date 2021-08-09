@@ -24,7 +24,9 @@ python init_keycloak.py
 Vous pouvez créer un auth provider sous Keycloak en suivant les étapes suivantes :
 
 1. Créer une app sur github (https://github.com/settings/developers)
+
     Homepage url: http://localhost:8081/auth/realms/hasura
+    
     Authorization callback url: http://localhost:8081/auth/realms/hasura/broker/github/endpoint
 
 2. Créer un auth provider de type github sous keycloak en fournissant les secrets key dans l'interface
@@ -35,6 +37,7 @@ Plus d'info ici :
 
 
 ## Configurer Hasura
+
 
 Ouvrir hasura et entrer le mot de passe dans le docker-compose
 

@@ -26,7 +26,7 @@ Vous pouvez créer un auth provider sous Keycloak en suivant les étapes suivant
 1. Créer une app sur github (https://github.com/settings/developers)
 
     Homepage url: http://localhost:8081/auth/realms/hasura
-    
+
     Authorization callback url: http://localhost:8081/auth/realms/hasura/broker/github/endpoint
 
 2. Créer un auth provider de type github sous keycloak en fournissant les secrets key dans l'interface
@@ -113,5 +113,5 @@ Hasura   : http://localhost:8080
 Frontend : http://localhost:8082
 ```
 
-Vous êtes maintenant sur l'application!
+Pour aller plus loin avec l'application :
 - [Comment fonctionne l'application ?](app.md)

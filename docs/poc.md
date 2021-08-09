@@ -1,6 +1,7 @@
 # Cadrage du POC
 
-## Description de l’application
+Description de l’application
+-------------
 
 L’application est composée d’un frontend en Vuejs et d’un backend en Hasura.
 Pour gérer l’authentification et les autorisations nous utiliserons Keycloak.
@@ -23,14 +24,16 @@ Le backend doit retourner une 401 si l’utilisateur qui fait la requête n’a 
 Pour des raisons de performances nous devons dupliquer les utilisateurs de Keycloak dans Hasura, il faudra donc faire en sorte que lorsqu’un utilisateur est créé sur l’interface de Keycloak que l'utilisateur soit créer aussi sur Hasura. Pour se faire il faudra vérifier s’il est possible de créer des webhooks sur Keycloak lorsqu’un utilisateur est créé. Sinon il faudra créer des classes Java et surcharger les classes de Keycloak.
 
 
-## Les critères d’acceptation du POC
+Les critères d’acceptation du POC
+-------------
 
 Si je ne suis pas authentifié sur le frontend, je dois être redirigé vers la page de connexion de Keycloak
 Si je suis authentifié sur le frontend mais que je n’ai pas les rôles dans keycloak pour lister les livres alors ça m’affiche un message pour me dire qu je n’ai pas les droits
 Si je suis authentifié sur le frontend mais que je n’ai pas les rôles dans keycloak pour créer un livre alors ça m’affiche un message pour me dire qu je n’ai pas les droits
 
 
-## Les tâches réalisées
+Les tâches réalisées
+-------------
 
 ### Frontend
 

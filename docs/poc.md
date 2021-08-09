@@ -27,9 +27,9 @@ Pour des raisons de performances nous devons dupliquer les utilisateurs de Keycl
 Les critères d’acceptation du POC
 -------------
 
-Si je ne suis pas authentifié sur le frontend, je dois être redirigé vers la page de connexion de Keycloak
-Si je suis authentifié sur le frontend mais que je n’ai pas les rôles dans keycloak pour lister les livres alors ça m’affiche un message pour me dire qu je n’ai pas les droits
-Si je suis authentifié sur le frontend mais que je n’ai pas les rôles dans keycloak pour créer un livre alors ça m’affiche un message pour me dire qu je n’ai pas les droits
+- Si je ne suis pas authentifié sur le frontend, je dois être redirigé vers la page de connexion de Keycloak
+- Si je suis authentifié sur le frontend mais que je n’ai pas les rôles dans keycloak pour lister les livres alors ça m’affiche un message pour me dire qu je n’ai pas les droits
+- Si je suis authentifié sur le frontend mais que je n’ai pas les rôles dans keycloak pour créer un livre alors ça m’affiche un message pour me dire qu je n’ai pas les droits
 
 
 Les tâches réalisées

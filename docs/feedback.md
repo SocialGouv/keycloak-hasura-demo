@@ -1,6 +1,7 @@
 # Retours suite au POC
 
 ## Bien choisir les rôles en amont
+
 Il est hyper important de bien réfléchir aux rôles en amont car cela impacte tout profondement derrière.
 
 Raison 1 :
@@ -23,11 +24,13 @@ Exemple :
 Dans cet exemple si mon rôle possède le droit de lister les books mais n'a pas le droit de lister les user (author) alors celretournera une erreur
 
 ## Customiser les plugins keycloak est possible mais peut être complexe
+
 Les dépendances supplémentaires sont assez complexe à installer (avis d'une personne n'ayant pas fait de java depuis un moment)
 
 Si on souhaite ajouter des dépendances en plus dans le plugin keycloak :
 - https://stackoverflow.com/questions/46205475/keycloak-extension-with-dependencies
 
 ## Pour aller plus loin
+
 Pour mieux comprendre les rôles :
 - https://stackoverflow.com/questions/60963627/can-someone-forge-a-request-to-hasura-graphql-engine-by-setting-x-hasura-role

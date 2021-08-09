@@ -1,6 +1,7 @@
 # Lancer et configurer le POC
 
 ## Lancer les composants
+
 ```bash
 docker-compose up -d
 ```
@@ -11,6 +12,7 @@ docker ps
 ```
 
 ## Configurer keycloak
+
 Afin d'assurer une connexion entre Hasura et Keycloak, il est nécessaire de préconfigurer Keycloak (Realm, client, mappers ...). Pour ce faire, il suffit lancer le script d'initialisation de keycloak comme ci-dessous.
 ```bash
 cd dev
@@ -18,6 +20,7 @@ python init_keycloak.py
 ```
 
 ### Github auth
+
 - Need to create an apps in github
   https://github.com/settings/developers
   Homepage url: http://localhost:8081/auth/realms/hasura
@@ -26,6 +29,7 @@ python init_keycloak.py
 
 
 ## Configurer Hasura
+
 Ouvrir hasura et entrer le mot de passe dans le docker-compose
 
 Voici les étapes à réaliser dans hasura :
@@ -79,6 +83,7 @@ mutation deleteBook {
 ```
 
 ## Lancer l'application
+
 Premièrement il faut installer les dépendances du frontend en local :
 ```bash
 npm install
@@ -90,6 +95,7 @@ npm start
 ```
 
 ## Accéder aux différents composants
+
 Voici les urls des différents composants :
 
 ```

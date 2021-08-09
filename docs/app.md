@@ -1,10 +1,12 @@
 ## Se connecter
+
 En lançant l'application, une interface keycloak s'affichera en vous demandant des identifiants.
 Vous pouvez soit vous inscrire, soit vous connecter avec l'user que nous avons généré: 
 - Username: user
 - Password: secret
 
 ## Changer le rôle d'un utilisateur
+
 Si vous voulez ajouter ou supprimer un rôle d'un utilisateur, voici les étapes à suivre:
 - Accéder au keycloak avec les identifiants du docker-compose
 - Sélectionner le realm "Hasura"

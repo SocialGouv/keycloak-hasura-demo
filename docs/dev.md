@@ -11,12 +11,13 @@ docker ps
 ```
 
 ## Configurer keycloak
+Afin d'assurer une connexion entre Hasura et Keycloak, il est nécessaire de préconfigurer Keycloak (Realm, client, mappers ...). Pour ce faire, il suffit lancer le script d'initialisation de keycloak comme ci-dessous.
 ```bash
 cd dev
 python init_keycloak.py
 ```
 
-## Github auth
+### Github auth
 - Need to create an apps in github
   https://github.com/settings/developers
   Homepage url: http://localhost:8081/auth/realms/hasura
@@ -62,7 +63,7 @@ mutation addBook {
 }
 
 mutation updateUser {
-  update_user_by_pk(pk_columns: {id: "7d3a9671-381b-442a-b720-2d59ef5bbce6"}, _set: { first_name: "PETER"}) {
+  update_user_by_pk(pk_columns: {id: "7d3a9671-381b-442a-b720-2d59ef5bbce6"}, _set: { first_name: "KEVIN" }) {
 		id
   }
 }
@@ -77,20 +78,25 @@ mutation deleteBook {
 
 ```
 
-## Accéder à l'application
-Pour lancer l'application:
+## Lancer l'application
+Premièrement il faut installer les dépendances du frontend en local :
 ```bash
 npm install
 ```
+
+Vous pouvez maintenant lancer le frontend en lançant la commande suivante :
 ```bash
 npm start
 ```
+
+## Accéder aux différents composants
+Voici les urls des différents composants :
+
+```
+Keycloak : http://localhost:8081
+Hasura   : http://localhost:8080
+Frontend : http://localhost:8082
+```
+
 Vous êtes maintenant sur l'application!
 - [Comment fonctionne l'application ?](app.md)
-
-## France connect
-### Pour s'authentifier via france connect
-https://partenaires.franceconnect.gouv.fr/fcp/fournisseur-service
-
-### Pour être fournisseur d'identité sur france connect
-https://partenaires.franceconnect.gouv.fr/fcp/fournisseur-identite

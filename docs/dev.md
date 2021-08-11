@@ -16,7 +16,8 @@ docker ps
 Afin d'assurer une connexion entre Hasura et Keycloak, il est nécessaire de préconfigurer Keycloak (Realm, client, mappers ...). Pour ce faire, il suffit lancer le script d'initialisation de keycloak comme ci-dessous.
 ```bash
 cd dev
-python init_keycloak.py
+pip3 install requests python-keycloak
+python3 init_keycloak.py
 ```
 
 ### Github auth

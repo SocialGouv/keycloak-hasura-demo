@@ -45,7 +45,7 @@ services:
 
   # Hasura
   hasura:
-    image: hasura/graphql-engine:v2.0.3
+    image: hasura/graphql-engine:v2.0.3.cli-migrations-v3
     ports:
       - "8080:8080"
     depends_on:
@@ -53,6 +53,9 @@ services:
       - keycloak
     networks:
       - demo-network
+    volumes:
+      - ./hasura/migrations:/hasura-migrations
+      - ./hasura/metadata:/hasura-metadata
     environment:
       HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:postgrespassword@pg_hasura:5432/postgres
       HASURA_GRAPHQL_ENABLE_CONSOLE: "true" # set to "false" to disable console

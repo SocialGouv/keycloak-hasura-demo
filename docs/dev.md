@@ -38,13 +38,13 @@ Plus d'info ici :
 
 ## Configurer Hasura
 
-
 Ouvrir hasura et entrer le mot de passe dans le docker-compose
 
 Voici les étapes à réaliser dans hasura :
 - Ouvrir les options (avec le bouton en haut à droite de la page)
 - Accéder à l'onglet "Metadata Actions"
 - Cliquer sur le bouton "Import metadata" puis importer le fichier hasura_metadata.json situé dans "./dev/hasura"
+- Importer les fichiers de migration en suivant la documentation [Ici](hasura.md)
 
 Vous avez maintenant une base de données prête à l'emploi!
 

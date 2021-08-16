@@ -93,7 +93,7 @@ def create_realm_anonymous_group(keycloak_admin):
         # Creating the group with the required attributes
         keycloak_admin.create_group({'name': KEYCLOAK_REALM_ANONYMOUS_GROUP, "attributes": {
                       "x-hasura-default-role": ["anonymous"],
-                      "x-hasura-allowed-roles": ["anonymous##book_creator##book_reader"]
+                      "x-hasura-allowed-roles": ["anonymous##book-creator##book-reader"]
                     }})
     realm_anonymous_group = keycloak_admin.get_group_by_path(
         '/{}'.format(KEYCLOAK_REALM_ANONYMOUS_GROUP))
@@ -129,7 +129,7 @@ def create_realm_auth_client(keycloak_admin):
                 'claim.value': "anonymous",
                 'id.token.claim': "false",
                 'jsonType.label': "String",
-                'userinfo.token.claim': "false"
+                'userinfo.token.claim': "true"
             },
             'name': "x-hasura-default-role",
             'protocol': "openid-connect",
@@ -142,7 +142,7 @@ def create_realm_auth_client(keycloak_admin):
                 'id.token.claim': "false",
                 'jsonType.label': "String",
                 'multivalued': "true",
-                'userinfo.token.claim': "false",
+                'userinfo.token.claim': "true",
                 'usermodel.clientRoleMapping.clientId': "hasura-app"
             },
             'name': "x-hasura-allowed-roles",
@@ -156,7 +156,7 @@ def create_realm_auth_client(keycloak_admin):
                 'id.token.claim': "false",
                 'jsonType.label': "String",
                 'user.attribute': "id",
-                'userinfo.token.claim': "false"
+                'userinfo.token.claim': "true"
             },
             'name': "hasura-user-id",
             'protocol': "openid-connect",
@@ -189,8 +189,8 @@ def init_keycloak():
     client = create_realm_auth_client(keycloak_admin_master)
     print('  create realm auth client OK')
 
-    keycloak_admin_master.create_client_role(client.get('id'), {'name': 'book_reader', 'clientRole': True})
-    keycloak_admin_master.create_client_role(client.get('id'), {'name': 'book_creator', 'clientRole': True})
+    keycloak_admin_master.create_client_role(client.get('id'), {'name': 'book-reader', 'clientRole': True})
+    keycloak_admin_master.create_client_role(client.get('id'), {'name': 'book-creator', 'clientRole': True})
     print('  create roles for client OK')
 
     anonymous_group = create_realm_anonymous_group(keycloak_admin_master)

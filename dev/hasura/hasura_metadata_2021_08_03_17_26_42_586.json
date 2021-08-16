@@ -28,12 +28,7 @@
                   "set": {
                     "creator_id": "x-hasura-User-id"
                   },
-                  "columns": [
-                    "id",
-                    "name",
-                    "creator_id",
-                    "publication_date"
-                  ],
+                  "columns": ["id", "name", "creator_id", "publication_date"],
                   "backend_only": false
                 }
               }
@@ -42,24 +37,14 @@
               {
                 "role": "book-creator",
                 "permission": {
-                  "columns": [
-                    "id",
-                    "name",
-                    "creator_id",
-                    "publication_date"
-                  ],
+                  "columns": ["id", "name", "creator_id", "publication_date"],
                   "filter": {}
                 }
               },
               {
                 "role": "book-reader",
                 "permission": {
-                  "columns": [
-                    "id",
-                    "name",
-                    "creator_id",
-                    "publication_date"
-                  ],
+                  "columns": ["id", "name", "creator_id", "publication_date"],
                   "filter": {}
                 }
               }
@@ -68,12 +53,7 @@
               {
                 "role": "book-creator",
                 "permission": {
-                  "columns": [
-                    "id",
-                    "name",
-                    "creator_id",
-                    "publication_date"
-                  ],
+                  "columns": ["id", "name", "creator_id", "publication_date"],
                   "filter": {},
                   "check": null
                 }

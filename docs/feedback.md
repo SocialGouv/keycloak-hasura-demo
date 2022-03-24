@@ -34,3 +34,9 @@ Si on souhaite ajouter des dépendances en plus dans le plugin keycloak :
 
 Pour mieux comprendre les rôles :
 - https://stackoverflow.com/questions/60963627/can-someone-forge-a-request-to-hasura-graphql-engine-by-setting-x-hasura-role
+
+## Notes Ju :
+
+L'idée initiale était de pouvoir avoir **dans hasura** une base de users synchronisée avec celle du keycloak. Pour pouvoir utiliser cette table users pour faire du relationnel dans l'appli.
+
+Le PoC fonctionne mais nécessite du code custom; un plugin existant type [event-emitter](https://github.com/cloudtrust/event-emitter) permettrait de déléguer toute la logique de MAJ côté hasura.
